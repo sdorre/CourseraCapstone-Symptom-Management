@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/check_in_question_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:text="Question ?" 
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="italic" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/check_in_answerYES_textView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="YES"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/check_in_answerNO_textView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="NO"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/check_in_date_textView"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"
+            android:gravity="right"
+            android:text="Date : "
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/check_in_date_editText"
+            android:layout_width="140dp"
+            android:layout_marginTop="25dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="dd-MM-YYYY"
+            android:inputType="date"
+            android:text="YYYY-MM-dd" />
+
+    </LinearLayout>
+
+   	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/check_in_time_textView"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="25dp"
+            android:gravity="right"
+            android:text="Time :  HH = "
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+	   	<EditText
+	   	    android:id="@+id/check_in_time_hour_editText"
+	   	    android:layout_width="45dp"
+	   	    android:layout_height="wrap_content"
+	   	    android:layout_marginTop="25dp"
+	   	    android:inputType="time"
+	   	    android:text="09" />
+		
+		<TextView
+            android:id="@+id/check_in_time_minute_textView"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="25dp"
+            android:gravity="right"
+            android:text=" mm = "
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+	   	        
+		<EditText
+		    android:id="@+id/check_in_time_minute_editText"
+		    android:layout_width="50dp"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="25dp"
+		    android:inputType="number"
+		    android:text="HH" />
+	
+    </LinearLayout>
+    
+    <Button
+        android:id="@+id/check_in_submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:text="Submit" />
+    
+</LinearLayout>

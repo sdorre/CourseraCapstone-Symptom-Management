@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.capstone.symptommanagement"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="14" />
+
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    
+    <permission android:name="com.capstone.symptommanagement.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    
+    <uses-permission android:name="com.capstone.symptommanagement.permission.C2D_MESSAGE" />
+    
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Black.NoTitleBar" >
+        <activity
+            android:name="com.capstone.symptommanagement.ui.LoginScreenActivity"
+            android:label="@string/app_name"
+			android:screenOrientation="portrait" >
+	      	<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        
+        <activity 
+	        android:name="com.capstone.symptommanagement.ui.SettingsActivity" 
+	        android:label="@string/app_name">
+    	</activity>
+        
+        <activity 
+	        android:name="com.capstone.symptommanagement.ui.PatientHomeActivity" 
+	        android:label="@string/app_name">
+    	</activity>
+    	
+      	<activity 
+	        android:name="com.capstone.symptommanagement.ui.DoctorHomeActivity" 
+	        android:label="@string/app_name">
+	      	    <intent-filter>
+					<action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+					<category android:name="com.capstone.symptommanagement.ui" />
+			    </intent-filter>
+    	</activity>
+    	
+      	<activity 
+	        android:name="com.capstone.symptommanagement.ui.CheckInActivity" 
+	        android:label="@string/app_name">
+    	</activity>
+    	
+      	<activity 
+	        android:name="com.capstone.symptommanagement.ui.DoctorCheckPatientActivity" 
+	        android:label="@string/app_name">
+    	</activity>
+    	
+      	<receiver android:name="com.capstone.symptommanagement.CheckInNotificationReceiver" >
+        </receiver>
+        
+      	<receiver 
+      	    android:name="com.capstone.symptommanagement.DoctorNotificationReceiver"
+      	    android:permission="com.google.android.c2dm.permission.SEND">
+	      		<intent-filter>
+	      	   		<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+	      	   		<action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+	      	    	<category android:name="com.capstone.symptommanagement"/>
+	      		</intent-filter>
+        </receiver>
+        
+      	<service android:name="com.capstone.symptommanagement.DoctorNotificationIntentService">
+      	</service>
+        
+        <service android:name="com.capstone.symptommanagement.auth.SymptomMgmtAuthService">
+		    <intent-filter>
+		        <action android:name="android.accounts.AccountAuthenticator" />
+		    </intent-filter>
+		    <meta-data android:name="android.accounts.AccountAuthenticator"
+		               android:resource="@xml/authenticator" />
+		</service>
+		
+        
+    </application>    
+</manifest>

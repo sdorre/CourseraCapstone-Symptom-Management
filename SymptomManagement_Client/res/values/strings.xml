@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Symptom Management</string>
+    <string name="loginButton">Connection</string>
+    <string name="username">username</string>
+	<string name="password">password</string>
+	<string name="doctorMode">Doctor Mode</string>
+	
+	<string name="icon">ICON VIEW</string>
+	<string name="settings">Settings</string>
+	
+	<string name="doctor_patientList_hint">Patient name..</string>
+	
+	<string name="default_time">08:30</string>
+</resources>
